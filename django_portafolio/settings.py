@@ -49,13 +49,13 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'django_portafolio.urls'
@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'django_portafolio.wsgi.application'
 
 DATABASES = {
     'default':dj_database_url.config(
-        default= 'postgresql://postgres:postgres@localhost/postgres',
+        default= 'sqlite:///db.sqlite3',
         conn_max_age=600
     ) }
 
